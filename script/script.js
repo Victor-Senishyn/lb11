@@ -1,6 +1,9 @@
 let userName = prompt('Enter your name');
+const generatorButton = document.getElementById('gengrator');
 let leftScore = 0;
 let rightScore = 0;
+
+generatorButton.addEventListener('click', generate)
 
 if (userName === null || userName === '') {
     userName = 'Player';
