@@ -102,6 +102,6 @@ h2,h3{
     animation: shake 0.5s ease 1; 
 }
 
-h3,p,button{
+h2,h3,p,button{
     color: white;
 }
