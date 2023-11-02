@@ -19,9 +19,15 @@ function generate(){
 	countButtonPress++
 	let playersCard = parseInt(Math.random() * 9) + 6
 	let computersCard = parseInt(Math.random() * 9) + 6
-	//alert('Player card: ' + playersCard + '\nComputer card: ' + computersCard)
+	if (11 < playersCard){
+		playersCard -= 10
+	}
+	if (11 < computersCard) {
+		computersCard -= 10
+	}
+		//alert('Player card: ' + playersCard + '\nComputer card: ' + computersCard)
 
-    playersScore+=playersCard;
+	playersScore += playersCard
     computersScore+=computersCard;
 
     document.getElementById('playersScore').innerHTML = playersScore
@@ -37,24 +43,24 @@ function generate(){
 }
 
 function create(num, imageElement, board) {
-	if (num === 14) {
+	if (num === 11) {
 		imageElement.src = '/cards/ace.png'
-		imageElement.alt = 'Ace'
+		imageElement.alt = 'Туз'
 		imageElement.classList.add('card')
 		board.appendChild(imageElement)
-	} else if (num === 13) {
+	} else if (num === 4) {
 		imageElement.src = '/cards/king.png'
-		imageElement.alt = 'King'
+		imageElement.alt = 'Король'
 		imageElement.classList.add('card')
 		board.appendChild(imageElement)
-	} else if (num === 12) {
+	} else if (num === 3) {
 		imageElement.src = '/cards/queen.png'
-		imageElement.alt = 'Queen'
+		imageElement.alt = 'Дама'
 		imageElement.classList.add('card')
 		board.appendChild(imageElement)
-	} else if (num === 11) {
+	} else if (num === 2) {
 		imageElement.src = '/cards/jack.png'
-		imageElement.alt = 'Jack'
+		imageElement.alt = 'Валет'
 		imageElement.classList.add('card')
 		board.appendChild(imageElement)
 	} else if (num === 10) {
