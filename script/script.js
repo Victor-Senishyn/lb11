@@ -1,10 +1,5 @@
 let userName = prompt('Enter your name')
-const playersBoard = document.getElementById('playersBoard')
-const computersBoard = document.getElementById('computersBoard')
-let playersScore = 0// document.getElementById('playersScore').innerHTML
-let computersScore = 0// document.getElementById('computersScore').innerHTML
-
-let countButtonPress = 0;
+let countButtonPress = 0
 
 const generatorButton = document.getElementById('btn')
 generatorButton.addEventListener('click', generate)
@@ -12,109 +7,109 @@ generatorButton.addEventListener('click', generate)
 if (userName === null || userName === '') {
 	userName = 'Player'
 }
-
 document.getElementById('player-name').textContent = userName
 
-function generate(){
+function generate() {
 	countButtonPress++
-	let playersCard = parseInt(Math.random() * 9) + 6
-	let computersCard = parseInt(Math.random() * 9) + 6
-	if (11 < playersCard){
-		playersCard -= 10
-	}
-	if (11 < computersCard) {
-		computersCard -= 10
-	}
-		//alert('Player card: ' + playersCard + '\nComputer card: ' + computersCard)
 
-	playersScore += playersCard
-    computersScore+=computersCard;
+	let content11 = document.getElementById('el11').innerHTML
+	let content21 = document.getElementById('el21').innerHTML
+	let content31 = document.getElementById('el31').innerHTML
 
-    document.getElementById('playersScore').innerHTML = playersScore
-    document.getElementById('computersScore').innerHTML = computersScore
+	let content12 = document.getElementById('el12').innerHTML
+	let content22 = document.getElementById('el22').innerHTML
+	let content32 = document.getElementById('el32').innerHTML
 
-	create(playersCard, document.createElement('img'), playersBoard)
-	create(computersCard, document.createElement('img'), computersBoard)
+	let content13 = document.getElementById('el13').innerHTML
+	let content23 = document.getElementById('el23').innerHTML
+	let content33 = document.getElementById('el33').innerHTML
 
-    if (countButtonPress === 3) {
-		generatorButton.removeEventListener('click', generate)
-        setTimeout(findWinner, 1000)
-    }
-}
+	swapContent(
+		content11,
+		content21,
+		content31,
+		parseInt(Math.random() * 13) + 5,
+		'el11',
+		'el21',
+		'el31'
+	)
+	swapContent(
+		content12,
+		content22,
+		content32,
+		parseInt(Math.random() * 13) + 5,
+		'el12',
+		'el22',
+		'el32'
+	)
+	swapContent(
+		content13,
+		content23,
+		content33,
+		parseInt(Math.random() * 13) + 5,
+		'el13',
+		'el23',
+		'el33'
+	)
 
-function create(num, imageElement, board) {
-	if (num === 11) {
-		imageElement.src = '/cards/ace.png'
-		imageElement.alt = 'Туз'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 4) {
-		imageElement.src = '/cards/king.png'
-		imageElement.alt = 'Король'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 3) {
-		imageElement.src = '/cards/queen.png'
-		imageElement.alt = 'Дама'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 2) {
-		imageElement.src = '/cards/jack.png'
-		imageElement.alt = 'Валет'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 10) {
-		imageElement.src = '/cards/10.png'
-		imageElement.alt = '10'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 9) {
-		imageElement.src = '/cards/9.png'
-		imageElement.alt = '9'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 8) {
-		imageElement.src = '/cards/8.png'
-		imageElement.alt = '8'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 7) {
-		imageElement.src = '/cards/7.png'
-		imageElement.alt = '7'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	} else if (num === 6) {
-		imageElement.src = '/cards/6.png'
-		imageElement.alt = '6'
-		imageElement.classList.add('card')
-		board.appendChild(imageElement)
-	}
-}
+	generatorButton.removeEventListener('click', generate)
+	setTimeout(()=>{
+		let el21Value = document.getElementById('el21').textContent.trim()
+		let el22Value = document.getElementById('el22').textContent.trim()
+		let el23Value = document.getElementById('el23').textContent.trim()
+		if (el21Value === el22Value && el22Value === el23Value) {
+			alert(`${userName} WON`)
+			countButtonPress = 0
+			setTimeout(() => {
+				document
+					.querySelector('.shape-for-form')
+					.classList.add('change-color-animation')
+			}, 3000)
+			document
+				.querySelector('.shape-for-form')
+				.classList.remove('change-color-animation')
 
-function findWinner(){
-    if (playersScore > computersScore) {
-			alert(`${userName} won`)
-		} else if (computersScore > playersScore) {
-			alert('Computer won')
-		} else {
-			alert('Draw')
+		} else if (countButtonPress === 3){
+			alert('TRY AGAIN')
+			countButtonPress = 0
 		}
-    toStart()
+		generatorButton.addEventListener('click', generate)
+	}, 4000)
 }
 
-function toStart(){
-	playersScore = 0 
-	computersScore = 0  
-    countButtonPress = 0
-    document.getElementById('playersScore').innerHTML = playersScore
-    document.getElementById('computersScore').innerHTML = computersScore
-    removeCards(computersBoard)
-    removeCards(playersBoard)
-	generatorButton.addEventListener('click', generate)
-}
+function swapContent(
+	content1,
+	content2,
+	content3,
+	numberOfScrolls,
+	el1,
+	el2,
+	el3
+) {
+	let temp = content3
+	content3 = content2
+	content2 = content1
+	content1 = temp
 
-function removeCards(parentElement) {
-	for (; parentElement.firstChild; ) {
-		parentElement.removeChild(parentElement.firstChild)
+	document.getElementById(el1).innerHTML = content1
+	document.getElementById(el2).innerHTML = content2
+	document.getElementById(el3).innerHTML = content3
+
+	numberOfScrolls--
+
+	if (numberOfScrolls > 0) {
+		setTimeout(
+			() =>
+				swapContent(
+					content1,
+					content2,
+					content3,
+					numberOfScrolls,
+					el1,
+					el2,
+					el3
+				),
+			200
+		)
 	}
 }

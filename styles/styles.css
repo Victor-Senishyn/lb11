@@ -1,5 +1,4 @@
 * {
-    font-family: 'Old English', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,7 +6,10 @@
 
 body {
     font-family: Tahoma, sans-serif;
-    background-image: url("https://cdn.vox-cdn.com/thumbor/-EiajP4lnDPP-2_gZ5vRPGu3lQc=/cdn.vox-cdn.com/uploads/chorus_asset/file/3706148/openworld-places-3.0.jpg");
+    background-image: url("https://www.cliffcastlecasinohotel.com/wp-content/uploads/2023/04/Casino-Floor-Cropped-1920x1000-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 
 .center {
@@ -17,72 +19,56 @@ body {
     height: 100vh;
 }
 
-.game-info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
 .shape-for-form {
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 1em white;
     padding: 20px;
     border-radius: 10px;
-    max-width: 550px;
-    width: 70%;
-    max-height: 1000px;
-    height: 88%;
+    max-width: 650px;
+    width: 85%;
+    max-height: 900px;
+    height: 95%;
 }
-
-#playersBoard,
-#computersBoard {
+.game-info{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+.board {
     display: flex;
     justify-content: space-around;
-    height: 210px;
+    width: 100%;
 }
 
-.player {
+.column {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 48%;
-    text-align: center;
-    margin: 5px;
 }
 
-h3 {
-    font-size: 20px;
-    padding: 5px;
+.sq img {
+    width: 150px;
+    height: 150px;
 }
 
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    10% { transform: translate(-2px, 0); }
-    20% { transform: translate(2px, 0); }
-    30% { transform: translate(-2px, 0); }
-    40% { transform: translate(2px, 0); }
-    50% { transform: translate(-2px, 0); }
-    60% { transform: translate(2px, 0); }
-    70% { transform: translate(-2px, 0); }
-    80% { transform: translate(2px, 0); }
-    90% { transform: translate(-2px, 0); }
-    100% { transform: translate(0, 0); }
+.dis{
+    display: none;
 }
 
-.card {
-    border-radius: 5%;
-    height: 200px;
-    width: 125px;
+.separator {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    margin: 5px 0;
 }
 
 #buttons-div {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1%;
 }
 
 button {
+    margin-top: 2%;
     padding: 10px 20px;
     font-size: 16px;
     text-decoration: none;
@@ -100,48 +86,87 @@ button:hover {
     animation: shake 0.5s ease 1;
 }
 
-/* Media query for responsiveness */
-@media only screen and (max-width: 960px) {
-    .shape-for-form {
-        width: 90%;
-        height: 90%;
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-2px, 0); }
+    20% { transform: translate(2px, 0); }
+    30% { transform: translate(-2px, 0); }
+    40% { transform: translate(2px, 0); }
+    50% { transform: translate(-2px, 0); }
+    60% { transform: translate(2px, 0); }
+    70% { transform: translate(-2px, 0); }
+    80% { transform: translate(2px, 0); }
+    90% { transform: translate(-2px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes changeColor {
+    0% { background-color: rgba(255, 0, 255, 0.5); }
+    25% { background-color: rgba(0, 128, 0, 0.5); }
+    50% { background-color: rgba(255, 255, 103, 0.5); }
+    75% { background-color: rgba(255, 0, 0, 0.5); }
+    100% { background-color: rgba(255, 255, 255, 0.5); }
+}
+
+.change-color-animation {
+    animation: changeColor 3s ease 1;
+}
+
+@media (max-width: 720px) {
+    .sq img {
+        width: 140px;
+        height: 140px;
     }
-    .player {
-        width: 100%;
+}
+
+@media (max-width: 480px) {
+    .sq img {
+        width: 115px;
+        height: 115px;
     }
-    .card {
-        border-radius: 5%;
-        height: 150px;
+    .game-info{
+        margin-bottom: 15%;
+    }
+     #buttons-div {
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 400px) {
+    .sq img {
         width: 100px;
-    }
-    #playersBoard,
-    #computersBoard {
-        flex-direction: row;
-        align-items: center;
-        height: 30%;
-    }
-}
-
-@media only screen and (max-width: 660px) {
-    .card {
-        border-radius: 5%;
-        height: 150px;
-        width: 100px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .card {
-        border-radius: 5%;
-        height: 125px;
-        width: 77.5px;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .card {
-        border-radius: 5%;
         height: 100px;
-        width: 62.5px;
+    }
+    .game-info{
+        margin-bottom: 25%;
+    }
+    #buttons-div {
+        margin-top: 25%;
+    }
+}
+
+@media (max-width: 360px) {
+    .sq img {
+        width: 65px;
+        height: 65px;
+    }
+    .game-info{
+        margin-bottom: 55%;
+    }
+    #buttons-div {
+        margin-top: 55%;
+    }
+}
+
+@media (max-width: 240px) {
+    .sq img {
+        width: 50px;
+        height: 50px;
+    }
+    .game-info{
+        margin-bottom: 95%;
+    }
+    #buttons-div {
+        margin-top: 95%;
     }
 }
