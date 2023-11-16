@@ -3,76 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lb10</title>
+    <title>lb11</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="jquery-3.7.1.min.js" defer></script>
     <script src="script/script.js" defer></script>
 </head>
 <body>
     <div class="center">
         <div class="shape-for-form">
-            <div class="game-info">
-                <h2 id="player-name">Player</h2>
+            <div id="user-info">
+                <h2 id="user-name"></h2>
+                <h4 id="score">True:0 False:0</h4>
+                <h3 id="number">0/0</h3>
             </div>
-            <div class="board">
-                <div class="column">
-                    <div class="sq" id="el11"> 
-                        <img src="https://img.freepik.com/premium-vector/toucan-cartoon-vector-illustration-of-toucan-bird_506530-1336.jpg" alt=""> 
-                        <span class="dis">1</span>
-                    </div>
-                    
-                    <div class="separator"></div>
-                    
-                    <div class="sq" id="el21"> 
-                        <img src="https://img.freepik.com/free-vector/trending-on-social-media-vector_53876-82251.jpg?t=st=1699569088~exp=1699569688~hmac=0081c5c0d7be157f75b273f837b71512005f9b01af3ef2d3d23d2d5a3263a92c" alt=""> 
-                        <span class="dis">2</span>
-                    </div>
-
-                    <div class="separator"></div>
-            
-                    <div class="sq" id="el31"> 
-                        <img src="https://img.freepik.com/premium-vector/vector-illustration-of-cute-baby-penguin-cartoon-waving-isolated-on-white-background_506530-837.jpg?w=360" alt=""> 
-                        <span class="dis">3</span>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="sq" id="el12"> 
-                        <img src="https://img.freepik.com/premium-vector/vector-illustration-of-cute-baby-penguin-cartoon-waving-isolated-on-white-background_506530-837.jpg?w=360" alt=""> 
-                        <span class="dis">3</span>
-                    </div> 
-                    <div class="separator"></div>
-
-                    <div class="sq" id="el22"> 
-                        <img src="https://img.freepik.com/free-vector/trending-on-social-media-vector_53876-82251.jpg?t=st=1699569088~exp=1699569688~hmac=0081c5c0d7be157f75b273f837b71512005f9b01af3ef2d3d23d2d5a3263a92c" alt=""> 
-                        <span class="dis">2</span>
-                    </div>
-                    <div class="separator"></div>
-
-                    <div class="sq" id="el32"> 
-                        <img src="https://img.freepik.com/premium-vector/toucan-cartoon-vector-illustration-of-toucan-bird_506530-1336.jpg" alt=""> 
-                        <span class="dis">1</span>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="sq" id="el13"> 
-                        <img src="https://img.freepik.com/free-vector/trending-on-social-media-vector_53876-82251.jpg?t=st=1699569088~exp=1699569688~hmac=0081c5c0d7be157f75b273f837b71512005f9b01af3ef2d3d23d2d5a3263a92c" alt=""> 
-                        <span class="dis">2</span>
-                    </div>
-                    <div class="separator"></div>
- 
-                    <div class="sq" id="el23"> 
-                        <img src="https://img.freepik.com/premium-vector/toucan-cartoon-vector-illustration-of-toucan-bird_506530-1336.jpg" alt=""> 
-                        <span class="dis">1</span>
-                    </div>
-                    <div class="separator"></div>
-
-                    <div class="sq" id="el33"> 
-                        <img src="https://img.freepik.com/premium-vector/vector-illustration-of-cute-baby-penguin-cartoon-waving-isolated-on-white-background_506530-837.jpg?w=360" alt=""> 
-                        <span class="dis">3</span>
-                    </div>
-                </div>
+            <div class="card">
+                <h3 id="question">Text</h3>
             </div>
             <div id="buttons-div">
-                <button id="btn">Get SPIN</button>
+                <input type="text" id="answer">
+                <button id="btn">CHECK</button>
             </div>
         </div>
     </div>

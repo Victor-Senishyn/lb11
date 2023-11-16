@@ -6,10 +6,11 @@
 
 body {
     font-family: Tahoma, sans-serif;
-    background-image: url("https://www.cliffcastlecasinohotel.com/wp-content/uploads/2023/04/Casino-Floor-Cropped-1920x1000-1.jpg");
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/567/358/desktop-wallpaper-general-knowledge-quiz-general-knowledge.jpg");
+    background-color: #c2c2c2;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
 .center {
@@ -19,154 +20,85 @@ body {
     height: 100vh;
 }
 
+.green{
+    color: green;
+}
+
+.red{
+    color:red;
+}
+
+#question{
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shape-for-form {
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 1em white;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
     padding: 20px;
     border-radius: 10px;
     max-width: 650px;
     width: 85%;
     max-height: 900px;
     height: 95%;
+    align-items: center;
+    justify-content: center;
 }
-.game-info{
+
+.card{
     display: flex;
     justify-content: center;
-    margin-bottom: 2%;
-}
-.board {
-    display: flex;
-    justify-content: space-around;
+    margin: 10px;
+    height: 40vh;
     width: 100%;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.sq img {
-    width: 150px;
-    height: 150px;
-}
-
-.dis{
-    display: none;
-}
-
-.separator {
-    width: 100%;
-    height: 5px;
-    background-color: black;
-    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 2px 2px 2px;
 }
 
 #buttons-div {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 1%;
+    align-items: center;
 }
+
+#user-info{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-top: 2%;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px;
+    box-sizing: border-box;
+}
+
 
 button {
     margin-top: 2%;
     padding: 10px 20px;
     font-size: 16px;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #8B4513;
-    border: 2px solid #CD853F;
+    border: 2px solid;
     border-radius: 8px;
-    box-shadow: 2px 2px 2px #A0522D;
+    box-shadow: 2px 2px 2px;
 }
 
 button:hover {
-    background-color: #6c381f;
-    color: #fff;
-    box-shadow: 4px 4px 4px #5c2e0d;
-    animation: shake 0.5s ease 1;
-}
-
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    10% { transform: translate(-2px, 0); }
-    20% { transform: translate(2px, 0); }
-    30% { transform: translate(-2px, 0); }
-    40% { transform: translate(2px, 0); }
-    50% { transform: translate(-2px, 0); }
-    60% { transform: translate(2px, 0); }
-    70% { transform: translate(-2px, 0); }
-    80% { transform: translate(2px, 0); }
-    90% { transform: translate(-2px, 0); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes changeColor {
-    0% { background-color: rgba(255, 0, 255, 0.5); }
-    25% { background-color: rgba(0, 128, 0, 0.5); }
-    50% { background-color: rgba(255, 255, 103, 0.5); }
-    75% { background-color: rgba(255, 0, 0, 0.5); }
-    100% { background-color: rgba(255, 255, 255, 0.5); }
-}
-
-.change-color-animation {
-    animation: changeColor 3s ease 1;
-}
-
-@media (max-width: 720px) {
-    .sq img {
-        width: 140px;
-        height: 140px;
-    }
-}
-
-@media (max-width: 480px) {
-    .sq img {
-        width: 115px;
-        height: 115px;
-    }
-    .game-info{
-        margin-bottom: 15%;
-    }
-     #buttons-div {
-        margin-top: 15%;
-    }
-}
-
-@media (max-width: 400px) {
-    .sq img {
-        width: 100px;
-        height: 100px;
-    }
-    .game-info{
-        margin-bottom: 25%;
-    }
-    #buttons-div {
-        margin-top: 25%;
-    }
-}
-
-@media (max-width: 360px) {
-    .sq img {
-        width: 65px;
-        height: 65px;
-    }
-    .game-info{
-        margin-bottom: 55%;
-    }
-    #buttons-div {
-        margin-top: 55%;
-    }
-}
-
-@media (max-width: 240px) {
-    .sq img {
-        width: 50px;
-        height: 50px;
-    }
-    .game-info{
-        margin-bottom: 95%;
-    }
-    #buttons-div {
-        margin-top: 95%;
-    }
+    box-shadow: 4px 4px 4px #000000;
 }
